@@ -54,6 +54,15 @@ public class ShapeTest
         s.Height = 10;
 
         Assert.IsFalse(s.IsAt(SplashKit.PointAt(55, 55)));
-        
+
+    }
+
+    [Test()]
+    public void ShapeSelectedTest()
+    {
+        Shape s = new Shape();
+        s.Selected = true;
+
+        Assert.AreEqual(s.Selected, true);
     }
 }
