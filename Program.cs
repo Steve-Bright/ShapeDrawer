@@ -5,8 +5,15 @@ namespace ShapeDrawer
 {
     public class Program
     {
+        private enum ShapeKind
+        {
+            Rectangle,
+            Circle
+        }
 
-        public static void Main(){
+        public static void Main()
+        {
+            ShapeKind kindToAdd = ShapeKind.Circle;
             Window window = new Window("Shapes by Swam", 800, 600);
             window.Clear(Color.White);
             Drawing drawingOne = new Drawing();
@@ -19,13 +26,35 @@ namespace ShapeDrawer
                 SplashKit.ProcessEvents();
                 SplashKit.ClearScreen(Color.White);
 
+                if (SplashKit.KeyTyped(KeyCode.RKey) == true)
+                {
+                    kindToAdd = ShapeKind.Rectangle;
+                }
+
+                if (SplashKit.KeyTyped(KeyCode.CKey) == true)
+                {
+                    kindToAdd = ShapeKind.Circle;
+                }
+
                 if (SplashKit.MouseClicked(MouseButton.LeftButton))
                 {
-                    Shape myShape = new Shape();
-                    myShape.X = SplashKit.MouseX();
-                    myShape.Y = SplashKit.MouseY();
-                    myShape.Draw();
-                    drawingOne.AddShape(myShape);
+                    Shape newShape;
+                    if (kindToAdd == ShapeKind.Circle)
+                    {
+                        Circle1 newCircle = new Circle1();
+                        newCircle.X = SplashKit.MouseX();
+                        newCircle.Y = SplashKit.MouseY();
+                        newShape = newCircle;
+                    }
+                    else
+                    {
+                        Rectangle1 newRect = new Rectangle1();
+                        newRect.X = SplashKit.MouseX();
+                        newRect.Y = SplashKit.MouseY();
+                        newShape = newRect;
+                    }
+
+                    drawingOne.AddShape(newShape);
                     // window.Clear(Color.White);
                     // window.Refresh();
                 }
@@ -68,8 +97,8 @@ namespace ShapeDrawer
 
             } while (!window.CloseRequested);
 
-                SplashKit.CloseAllWindows();
-            }   
+            SplashKit.CloseAllWindows();
+        }   
         
     }
 }

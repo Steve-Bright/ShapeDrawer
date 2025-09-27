@@ -84,12 +84,10 @@ namespace ShapeDrawer{
         {
             foreach (Shape shape in _shapes)
             {
-                Console.WriteLine("shape is " + shape);
             }
             _shapes.Remove(s);
-                        foreach (Shape shape in _shapes)
+            foreach (Shape shape in _shapes)
             {
-                Console.WriteLine("shape is " + shape);
             }
         }
     }

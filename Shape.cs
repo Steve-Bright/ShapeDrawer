@@ -6,20 +6,15 @@ namespace ShapeDrawer{
     {
         private Color _color;
         private float _x, _y;
-        private int _width, _height;
         private bool _selected;
 
 
-        public Shape(Color color, float x, float y, int width, int height)
+        public Shape(Color color)
         {
             _color = color;
-            _x = x;
-            _y = y;
-            _width = width;
-            _height = height;
         }
 
-        public Shape() : this(Color.Green, 0, 0, 100, 100)
+        public Shape() : this(Color.White)
         {
 
         }
@@ -42,17 +37,7 @@ namespace ShapeDrawer{
             get { return _y; }
         }
 
-        public int Width
-        {
-            set { _width = value; }
-            get { return _width; }
-        }
 
-        public int Height
-        {
-            set { _height = value; }
-            get { return _height; }
-        }
 
         public bool Selected
         {
@@ -60,24 +45,17 @@ namespace ShapeDrawer{
             get { return _selected; }
         }
 
-        public void Draw()
+        public virtual void Draw()
         {
-            SplashKit.FillRectangle(_color, _x, _y, _width, _height);
-            if (_selected == true)
-            {
-                this.DrawOutline();
-            }
         }
 
-        public void DrawOutline()
+        public virtual void DrawOutline()
         {
-             SplashKit.DrawRectangle(Color.Black, _x - 2, _y - 2, _width+ 4, _height + 4);
         }
 
-        public bool IsAt(Point2D pt)
+        public virtual bool IsAt(Point2D pt)
         {
-            bool result = SplashKit.PointInRectangle(pt.X, pt.Y, _x, _y, _width, _height);
-            return result;
+            return false;
         }
     }
 }
