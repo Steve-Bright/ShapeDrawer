@@ -17,17 +17,13 @@ namespace ShapeDrawer
         {
         }
 
-        public Circle1(Color color, int radius)
+        public Circle1(Color color, int radius):base(color)
         {
             _radius = radius;
         }
 
         public override void Draw()
         {
-            Console.WriteLine("Color is {0}", Color);
-            Console.WriteLine("X is {0}", X);
-            Console.WriteLine("Y is {0}", Y);
-            Console.WriteLine("_radius is {0}", _radius);
             SplashKit.FillCircle(base.Color, X, Y, _radius);
             if (Selected)
             {

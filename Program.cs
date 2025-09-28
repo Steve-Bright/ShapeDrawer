@@ -8,7 +8,8 @@ namespace ShapeDrawer
         private enum ShapeKind
         {
             Rectangle,
-            Circle
+            Circle,
+            Line
         }
 
         public static void Main()
@@ -36,6 +37,12 @@ namespace ShapeDrawer
                     kindToAdd = ShapeKind.Circle;
                 }
 
+                if (SplashKit.KeyTyped(KeyCode.LKey) == true)
+                {
+                    kindToAdd = ShapeKind.Line;
+                }
+
+
                 if (SplashKit.MouseClicked(MouseButton.LeftButton))
                 {
                     Shape newShape;
@@ -46,12 +53,17 @@ namespace ShapeDrawer
                         newCircle.Y = SplashKit.MouseY();
                         newShape = newCircle;
                     }
-                    else
+                    else if (kindToAdd == ShapeKind.Rectangle)
                     {
                         Rectangle1 newRect = new Rectangle1();
                         newRect.X = SplashKit.MouseX();
                         newRect.Y = SplashKit.MouseY();
                         newShape = newRect;
+                    }
+                    else
+                    {
+                        Line1 newLine = new Line1(Color.Black, SplashKit.MouseX(), SplashKit.MouseY());
+                        newShape = newLine;
                     }
                     drawingOne.AddShape(newShape);
                     // Console.WriteLine("The drawings are "+ drawingOne.ShapeCount);
