@@ -53,8 +53,8 @@ namespace ShapeDrawer
                         newRect.Y = SplashKit.MouseY();
                         newShape = newRect;
                     }
-
                     drawingOne.AddShape(newShape);
+                    // Console.WriteLine("The drawings are "+ drawingOne.ShapeCount);
                     // window.Clear(Color.White);
                     // window.Refresh();
                 }

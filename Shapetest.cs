@@ -8,7 +8,7 @@ public class ShapeTest
     [Test()]
     public void TestShapeAt()
     {
-        Shape s = new Shape();
+        Rectangle1 s = new Rectangle1();
 
         s.X = 25;
         s.Y = 25;
@@ -24,7 +24,7 @@ public class ShapeTest
     [Test()]
     public void TestShapeAtWhenMovied()
     {
-        Shape s = new Shape();
+        Rectangle1 s = new Rectangle1();
 
         s.X = 25;
         s.Y = 25;
@@ -41,7 +41,7 @@ public class ShapeTest
     [Test()]
     public void TestShapeAtWhenResized()
     {
-        Shape s = new Shape();
+        Rectangle1 s = new Rectangle1();
 
         s.X = 25;
         s.Y = 25;
@@ -60,7 +60,7 @@ public class ShapeTest
     [Test()]
     public void ShapeSelectedTest()
     {
-        Shape s = new Shape();
+        Rectangle1 s = new Rectangle1();
         s.Selected = true;
 
         Assert.AreEqual(s.Selected, true);

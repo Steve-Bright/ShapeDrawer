@@ -55,6 +55,8 @@ namespace ShapeDrawer{
             SplashKit.ClearScreen(_background);
             foreach (Shape eachshape in _shapes)
             {
+                //since eachshape is Shape class, u can actually do like
+                // (eachshape as Rectangle1).Draw();
                 eachshape.Draw();
 
             }
@@ -84,10 +86,12 @@ namespace ShapeDrawer{
         {
             foreach (Shape shape in _shapes)
             {
+                Console.WriteLine("shape is " + shape);
             }
             _shapes.Remove(s);
             foreach (Shape shape in _shapes)
             {
+                Console.WriteLine("shape is " + shape);
             }
         }
     }

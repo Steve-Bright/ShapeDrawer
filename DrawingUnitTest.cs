@@ -31,8 +31,8 @@ namespace ShapeDrawer
 
             Assert.AreEqual(0, count);
 
-            myDrawing.AddShape(new Shape());
-            myDrawing.AddShape(new Shape());
+            myDrawing.AddShape(new Rectangle1());
+            myDrawing.AddShape(new Rectangle1());
             count = myDrawing.ShapeCount;
             Assert.AreEqual(2, count);
         }
@@ -42,9 +42,9 @@ namespace ShapeDrawer
         {
             Drawing myDrawing = new Drawing();
             Shape[] testShapes = {
-                new Shape(Color.Red, 25, 25, 50, 50),
-                new Shape(Color.Green, 25, 10, 50, 50),
-                new Shape(Color.Blue, 10, 25, 50, 50) };
+                new Rectangle1(Color.Red, 25, 25, 50, 50),
+                new Rectangle1(Color.Green, 25, 10, 50, 50),
+                new Rectangle1(Color.Blue, 10, 25, 50, 50) };
             foreach (Shape s in testShapes) myDrawing.AddShape(s);
 
             List<Shape> selected;
@@ -71,9 +71,9 @@ namespace ShapeDrawer
         {
             Drawing myDrawing = new Drawing();
             Shape[] testShapes = {
-                new Shape(Color.Red, 25, 25, 50, 50),
-                new Shape(Color.Green, 25, 10, 50, 50),
-                new Shape(Color.Blue, 10, 25, 50, 50) };
+                new Rectangle1(Color.Red, 25, 25, 50, 50),
+                new Rectangle1(Color.Green, 25, 10, 50, 50),
+                new Rectangle1(Color.Blue, 10, 25, 50, 50) };
             foreach (Shape s in testShapes) myDrawing.AddShape(s);
 
 

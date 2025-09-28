@@ -2,7 +2,7 @@ using System;
 using SplashKitSDK;
 
 namespace ShapeDrawer{
-    public class Shape
+    public abstract class Shape
     {
         private Color _color;
         private float _x, _y;
@@ -14,7 +14,7 @@ namespace ShapeDrawer{
             _color = color;
         }
 
-        public Shape() : this(Color.White)
+        public Shape() : this(Color.Green)
         {
 
         }
@@ -45,17 +45,12 @@ namespace ShapeDrawer{
             get { return _selected; }
         }
 
-        public virtual void Draw()
-        {
-        }
+        public abstract void Draw();
+        // {
+        // }
 
-        public virtual void DrawOutline()
-        {
-        }
+        public abstract void DrawOutline();
 
-        public virtual bool IsAt(Point2D pt)
-        {
-            return false;
-        }
+        public abstract bool IsAt(Point2D pt);
     }
 }
